@@ -1,17 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Yaniv Logi - Portfolio</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');
+
+        /* ------------------------------------------------------------ */
+        .contact-section,
+        .testimonials-section,
+        .experience-section,
+        .education-section,
+        .blog-section,
+        .resume-section {
+            background-color: #ffffff;
+            color: #333;
+            padding: 20px;
+            margin: 50px auto;
+            border-radius: 10px;
+            max-width: 900px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-section input,
+        .contact-section textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .contact-section button {
+            padding: 10px 20px;
+            background-color: #43a4e1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .testimonial {
+            margin: 20px 0;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #555;
+        }
+
+        .experience-item,
+        .education-item,
+        .certification-item {
+            margin: 20px 0;
+        }
+
+        .resume-download-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #009687;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .resume-download-btn:hover {
+            background-color: #00796b;
+        }
+
+        .blog-post {
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .blog-post a {
+            color: #43a4e1;
+        }
+
+        /* ------------------------------------------------------------ */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            background-image: url('/Images/bg-image.jpg');
+            background-repeat: round;
         }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .about-me.dark-mode,
+        .skills.dark-mode,
+        .experience-section.dark-mode {
+            background: linear-gradient(135deg, #333 0%, #444 100%);
+        }
+
+
+        .about-me {
+            background: linear-gradient(135deg, #0096877a 0%, #1d4fa677 100%);
+            /* גוונים של טורקיז וירוק */
+            color: white;
+            padding: 20px 20px;
+            text-align: center;
+            margin: 50px auto;
+            border-radius: 15px;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgb(0, 234, 255);
+            animation: fadeInUp 1.5s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-me::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+            animation: rotateBg 10s linear infinite;
+        }
+
+        .about-me h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: bounceIn 1.5s ease-out;
+        }
+
+        .about-me p {
+            font-size: 20px;
+            line-height: 1.8;
+            margin: 0 auto;
+            max-width: 750px;
+            animation: fadeInUp 1.5s ease-in-out;
+            color: #fff;
+            /* צבע טקסט לבן */
+            font-family: "Heebo", system-ui;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotateBg {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes bounceIn {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .skills {
+            background: linear-gradient(135deg, #0096877a 0%, #1d4fa677 100%);
+            /* תן רקע כהה לכישורים */
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin: 50px auto;
+            border-radius: 15px;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgb(0, 234, 255);
+            animation: fadeInUp 1.5s ease-in-out;
+            font-family: 'Heebo', sans-serif;
+        }
+
+        .skills h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: bounceIn 1.5s ease-out;
+        }
+
+        .skills ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills ul li {
+            font-size: 18px;
+            line-height: 2;
+            margin-bottom: 10px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .skills ul li::after {
+            content: " ✓";
+            color: #7be5fc;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .skill-bar {
+            background-color: #ddd;
+            border-radius: 5px;
+            height: 10px;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .skill-level {
+            background-color: #43a4e1;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        body,
+        h1,
+        h2,
+        p,
+        li {
+            font-family: 'Heebo', sans-serif;
+        }
+
+        section {
+            scroll-margin-top: 80px;        }
 
         h1 {
             text-align: center;
@@ -26,19 +279,23 @@
             justify-content: center;
             gap: 20px;
             flex-grow: 1;
+
         }
 
         .gallery .gallery-item {
-    width: 300px; /* רוחב קבוע לכל פריט בגלריה */
-    height: auto; /* התאמה לגובה התמונה */
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    background-color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    transition: transform 0.4s, box-shadow 0.4s;
-    position: relative;
-    overflow: hidden; /* יבטיח שאין גלילה לא רצויה */
-}
+            width: 350px;
+            /* רוחב קבוע לכל פריט בגלריה */
+            height: auto;
+            /* התאמה לגובה התמונה */
+            border: 2px solid #7be5fc;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 234, 255, 0.638);
+            transition: transform 0.4s, box-shadow 0.4s;
+            position: relative;
+            overflow: hidden;
+            /* יבטיח שאין גלילה לא רצויה */
+        }
 
 
         .gallery .gallery-item:hover {
@@ -48,52 +305,63 @@
         }
 
         .gallery-item img {
-    width: 100%; /* תשמור על התמונות בתוך רוחב הפריט */
-    height: 200px; /* גובה קבוע לתמונה */
-    object-fit: cover; /* חותך את התמונה כך שתתאים לממדים שנקבעו */
-    transition: transform 0.4s ease;
-}
+            width: 100%;
+            /* תשמור על התמונות בתוך רוחב הפריט */
+            height: 350px;
+            /* גובה קבוע לתמונה */
+            object-fit: scale-down;
+            /* חותך את התמונה כך שתתאים לממדים שנקבעו */
+            transition: transform 0.4s ease;
+
+        }
 
 
         .gallery-item h3 {
             margin: 0;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            background-color: #333;
-            color: white;
+            background-color: #2a2c33;
+            color: rgb(41, 140, 176);
+            min-height: 50px;
+            font-family: cursive;
+
         }
 
         .gallery-item a {
             text-decoration: none;
             color: inherit;
-            display: block; /* Make the entire item clickable */
+            display: block;
+            /* Make the entire item clickable */
         }
 
         .description {
-            position: static; /* Positioning below the image */
-            bottom: 0; /* Position it above the gallery item */
+
+            position: static;
+            /* Positioning below the image */
+            bottom: 0;
+            /* Position it above the gallery item */
             left: 0;
             right: 0;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: #43a4e1;
             color: white;
             text-align: center;
             font-size: 16px;
-            opacity: 0; /* Start invisible */
+            opacity: 1;
+            /* Start invisible */
             transition: transform 0.4s ease, opacity 0.4s ease;
-            padding: 10px; /* Add padding for appearance */
-            transform: translateY(-100px);
-            min-height: 100px;
+            padding: 10px;
+            min-height: 200px;
+            font-family: cursive;
+            /* Add padding for appearance */
         }
 
-        .gallery-item:hover .description {
-            opacity: 1; /* Make visible */
-            transform: translateY(0);
-        }
+
 
         /* Styles for dots */
         .dots {
             text-align: center;
-            margin-top: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         .dot {
@@ -113,23 +381,143 @@
         .footer {
             text-align: center;
             padding: 20px;
-            background-color: #333;
-            color: white;
-            margin-top: auto;
+            background-color: #3b333389;
+            color: rgb(255, 255, 255);
+            margin-top: 20px;
             width: 100%;
             position: relative;
         }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul.menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul.menu li {
+            margin: 0;
+        }
+
+        nav ul.menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        nav ul.menu li a:hover {
+            background-color: #43a4e1;
+            border-radius: 5px;
+        }
     </style>
 </head>
+<header>
+    <nav>
+        <ul class="menu">
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#gallery">Projects</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+</header>
+
 <body>
 
     <div class="container">
-        <h1>My Projects</h1>
 
-        <div class="gallery">
+        <section class="about-me" id="about-me">
+            <h2>About Me</h2>
+            <p>Hello, I'm Yaniv Logi, a Software Engineering Technician specializing in cybersecurity. I have a strong
+                foundation in web development, backend systems, and cybersecurity practices. With hands-on experience in
+                creating efficient software solutions, I have developed tools and systems ranging from inventory
+                management to complex jewelry pricing calculators. My goal is to leverage my technical skills to provide
+                innovative, secure, and scalable solutions for businesses in various industries.</p>
+        </section>
+        <section class="skills" id="skills">
+            <h2>Technical Skills</h2>
+            <ul>
+                
+                <li>Languages: JavaScript, Python, Node.js, HTML, CSS, Java, SQL, C#</li>
+                <li>Frameworks: Express.js, React, Mongoose, Handlebars</li>
+                <li>Tools: Git, Docker, Jenkins</li>
+                <li>Security: Penetration Testing, Encryption, Cybersecurity Best Practices</li>
+            </ul>
+        </section>
+
+        <!-- -------------------------------------------------------------------- -->
+
+
+
+        <!-- Experience Section -->
+        <section class="experience-section" id="experience">
+            <h2>Work Experience</h2>
+            <div class="experience-item">
+                <h3><a href="https://eliana.diamonds/" style="text-decoration: none;">Eliana Diamonds</a></h3>
+                <p><strong>Position:</strong> VP of Digital and Development</p>
+                <p><strong>Dates:</strong> 2023 - today</p>
+                <p>Managed and led the digital and development department, including the maintenance and enhancement of the company's WooCommerce websites, ensuring high standards of performance and customer service.</p>
+            </div>
+
+        </section>
+
+        <!-- Education and Certifications Section -->
+        <section class="education-section" id="education">
+            <h2>Education & Certifications</h2>
+            <div class="education-item">
+                <h3>Software engineer with specialization in cyber</h3>
+                <p><strong>Institution:</strong> The College of Management</p>
+                <p><strong>Graduation Year:</strong> 2024</p>
+            </div>
+            <div class="certification-item">
+                <h3>WebSec - identify weaknesses. build defenses</h3>
+                <p><strong>Issuing Organization:</strong> Organization Name</p>
+                <p><strong>Year Obtained:</strong> 2023</p>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <!-- <section class="blog-section">
+            <h2>Insights & Blog</h2>
+            <article class="blog-post">
+                <h3>Title of Blog Post</h3>
+                <p>Write a short description or introduction to your blog post. You can write about industry trends, technical challenges, or personal insights.</p>
+                <a href="link-to-full-post.html">Read More</a>
+            </article>
+        </section> -->
+
+        <!-- Resume Download Section -->
+        <section class="resume-section" id="resume-section">
+            <h2>Download My Resume</h2>
+            <p>If you’d like a detailed overview of my experience and skills, download my resume below.</p>
+            <a href="path/to/your-resume.pdf" download class="resume-download-btn">Download in English (PDF)</a>
+            <a href="./Files/Yaniv_Logi-HE.pdf" download class="resume-download-btn">הורדה בעברית (PDF)</a>
+        </section>
+        <!-- ------------------------------------------------------------------------         -->
+        <div class="gallery" id="gallery">
+
             <div class="gallery-item">
                 <a href="https://github.com/yanivlogi/ShtokFlix">
-                    <img src="/Images/ShtokFlix.png" alt="Project 1">
+                    <img src="https://github.com/yanivlogi/portfolio/blob/master/Images/ShtokFlix.png?raw=true"
+                        alt="Project 1">
                     <h3>ShtokFlix</h3>
                     <div class="description">
                         <p>Automatically skips intros on Netflix. Created by Yaniv Logi.</p>
@@ -138,35 +526,43 @@
             </div>
             <div class="gallery-item">
                 <a href="https://github.com/yanivlogi/DirRenamerPro">
-                    <img src="/Images/DirRenamerPro.png" alt="Project 2">
+                    <img src="https://github.com/yanivlogi/portfolio/blob/master/Images/DirRenamerPro.png?raw=true"
+                        alt="Project 2">
                     <h3>DirRenamer</h3>
                     <div class="description">
-                        <p>DirRenamer is a Python script designed to simplify the process of batch renaming directories.</p>
+                        <p>DirRenamer is a Python script designed to simplify the process of batch renaming directories.
+                        </p>
                     </div>
                 </a>
             </div>
             <div class="gallery-item">
                 <a href="https://github.com/yanivlogi/storage-manager/tree/main">
-                    <img id="dynamic-image" src="/Images/storage-manager-1.png" alt="Project 3">
+                    <img id="dynamic-image"
+                        src="https://github.com/yanivlogi/portfolio/blob/master/Images/storage-manager-1.png?raw=true"
+                        alt="Project 3">
                     <h3>Inventory Management System</h3>
                     <div class="description">
-                        <p>An inventory management system that features barcode scanning for accurate stock tracking and real-time inventory monitoring, designed to enhance operational efficiency in retail environments.</p>
+                        <p>An inventory management system that features barcode scanning for accurate stock tracking and
+                            real-time inventory monitoring, designed to enhance operational efficiency in retail
+                            environments.</p>
                     </div>
                     <div class="dots">
-                        <span class="dot active" onclick="showImage(0)"></span>
-                        <span class="dot" onclick="showImage(1)"></span>
-                        <span class="dot" onclick="showImage(2)"></span>
-                        <span class="dot" onclick="showImage(3)"></span>
-                        <span class="dot" onclick="showImage(4)"></span>
+                        <span class="dot active" onmouseover="showImage(0)"></span>
+                        <span class="dot" onmouseover="showImage(1)"></span>
+                        <span class="dot" onmouseover="showImage(2)"></span>
+                        <span class="dot" onmouseover="showImage(3)"></span>
+                        <span class="dot" onmouseover="showImage(4)"></span>
                     </div>
                 </a>
             </div>
             <div class="gallery-item">
                 <a href="https://github.com/yanivlogi/Conversion-Calculator-for-Carats-to-Millimeters">
-                    <img src="/Images/CaratToMillimeter.png" alt="Project 4">
+                    <img src="https://github.com/yanivlogi/portfolio/blob/master/Images/CaratToMillimeter.png?raw=true"
+                        alt="Project 4">
                     <h3>Conversion Calculator for Carats to Millimeters</h3>
                     <div class="description">
-                        <p>A calculator that converts carat weight to millimeters based on diamond shape, developed for a jewelry store by Yaniv Logi.
+                        <p>A calculator that converts carat weight to millimeters based on diamond shape, developed for
+                            a jewelry store by Yaniv Logi.
 
                             Technologies Used: JavaScript, HTML, CSS</p>
                     </div>
@@ -174,10 +570,13 @@
             </div>
             <div class="gallery-item">
                 <a href="https://github.com/yanivlogi/Jewelry-Pricing-Calculator/tree/main">
-                    <img src="/Images/JewelryPricingCalculator.png" alt="Project 4">
+                    <img src="https://github.com/yanivlogi/portfolio/blob/master/Images/JewelryPricingCalculator.png?raw=true"
+                        alt="Project 4">
                     <h3>Jewelry Pricing Calculator</h3>
                     <div class="description">
-                        <p>A calculator that determines the selling price of jewelry based on gold weight, diamond size, whether the diamond is natural or CVD, and side diamonds. Developed for a jewelry company by Yaniv Logi.
+                        <p>A calculator that determines the selling price of jewelry based on gold weight, diamond size,
+                            whether the diamond is natural or CVD, and side diamonds. Developed for a jewelry company by
+                            Yaniv Logi.
                             Technologies Used: JavaScript, HTML, CSS
 
 
@@ -185,21 +584,73 @@
                     </div>
                 </a>
             </div>
+
         </div>
+        <!-- Testimonials Section -->
+        <section class="testimonials-section" id="testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonial">
+                <p>"Yaniv is a highly skilled technician. His solutions always meet our business needs perfectly."</p>
+                <span>- Ammnon Yousupov, Owner of a jewelry manufacturing company</span>
+            </div>
+            <div class="testimonial">
+                <p>"Working with Yaniv has been a pleasure. He brings innovative ideas to every project."</p>
+                <span>- Avital Ben lulu, Graphic and web designer </span>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out via email or use the form below:</p>
+            <form action="mailto:yanivlogi1@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </section>
     </div>
 
-    <div class="footer">
-        <p>© 2024 My Portfolio. All rights reserved.</p>
-    </div>
+    <footer class="footer">
+        <p>© 2024 Yaniv Logi Portfolio. All rights reserved.</p>
+        <a href="https://github.com/yanivlogi" target="_blank">GitHub</a> |
+        <a href="https://www.linkedin.com/in/yanivlogi" target="_blank">LinkedIn</a>
+    </footer>
+
 
     <script>
+
+document.querySelectorAll('nav ul.menu li a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        const offset = 80; // גובה התפריט הקבוע שלך
+
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition - offset;
+
+        window.scrollBy({
+            top: offsetPosition,
+            behavior: 'smooth'
+        });
+    });
+});
+
+
         // Array of image URLs
         const images = [
-            '/Images/storage-manager-1.png',
-            '/Images/storage-manager-2.png',
-            '/Images/storage-manager-3.png',
-            '/Images/storage-manager-4.png',
-            '/Images/storage-manager-5.png'
+            'https://github.com/yanivlogi/portfolio/blob/master/Images/storage-manager-1.png?raw=true',
+            'https://github.com/yanivlogi/portfolio/blob/master/Images/storage-manager-2.png?raw=true',
+            'https://github.com/yanivlogi/portfolio/blob/master/Images/storage-manager-3.png?raw=true',
+            'https://github.com/yanivlogi/portfolio/blob/master/Images/storage-manager-4.png?raw=true',
+            'https://github.com/yanivlogi/portfolio/blob/master/Images/storage-manager-5.png?raw=true'
         ];
 
         let currentIndex = 0;
@@ -229,4 +680,5 @@
     </script>
 
 </body>
+
 </html>
