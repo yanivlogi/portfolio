@@ -4,9 +4,229 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 50px;
+            font-size: 36px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            flex-grow: 1;
+        }
+
+        .gallery .gallery-item {
+    width: 300px; /* רוחב קבוע לכל פריט בגלריה */
+    height: auto; /* התאמה לגובה התמונה */
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s, box-shadow 0.4s;
+    position: relative;
+    overflow: hidden; /* יבטיח שאין גלילה לא רצויה */
+}
+
+
+        .gallery .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+    width: 100%; /* תשמור על התמונות בתוך רוחב הפריט */
+    height: 200px; /* גובה קבוע לתמונה */
+    object-fit: cover; /* חותך את התמונה כך שתתאים לממדים שנקבעו */
+    transition: transform 0.4s ease;
+}
+
+
+        .gallery-item h3 {
+            margin: 0;
+            padding: 15px;
+            text-align: center;
+            background-color: #333;
+            color: white;
+        }
+
+        .gallery-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block; /* Make the entire item clickable */
+        }
+
+        .description {
+            position: static; /* Positioning below the image */
+            bottom: 0; /* Position it above the gallery item */
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            font-size: 16px;
+            opacity: 0; /* Start invisible */
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            padding: 10px; /* Add padding for appearance */
+            transform: translateY(-100px);
+            min-height: 100px;
+        }
+
+        .gallery-item:hover .description {
+            opacity: 1; /* Make visible */
+            transform: translateY(0);
+        }
+
+        /* Styles for dots */
+        .dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #333;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: auto;
+            width: 100%;
+            position: relative;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Portfolio!</h1>
-    <p>Here are some of my projects.</p>
+
+    <div class="container">
+        <h1>My Projects</h1>
+
+        <div class="gallery">
+            <div class="gallery-item">
+                <a href="https://github.com/yanivlogi/ShtokFlix">
+                    <img src="/Images/ShtokFlix.png" alt="Project 1">
+                    <h3>ShtokFlix</h3>
+                    <div class="description">
+                        <p>Automatically skips intros on Netflix. Created by Yaniv Logi.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="https://github.com/yanivlogi/DirRenamerPro">
+                    <img src="/Images/DirRenamerPro.png" alt="Project 2">
+                    <h3>DirRenamer</h3>
+                    <div class="description">
+                        <p>DirRenamer is a Python script designed to simplify the process of batch renaming directories.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="https://github.com/yanivlogi/storage-manager/tree/main">
+                    <img id="dynamic-image" src="/Images/storage-manager-1.png" alt="Project 3">
+                    <h3>Inventory Management System</h3>
+                    <div class="description">
+                        <p>An inventory management system that features barcode scanning for accurate stock tracking and real-time inventory monitoring, designed to enhance operational efficiency in retail environments.</p>
+                    </div>
+                    <div class="dots">
+                        <span class="dot active" onclick="showImage(0)"></span>
+                        <span class="dot" onclick="showImage(1)"></span>
+                        <span class="dot" onclick="showImage(2)"></span>
+                        <span class="dot" onclick="showImage(3)"></span>
+                        <span class="dot" onclick="showImage(4)"></span>
+                    </div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="https://github.com/yanivlogi/Conversion-Calculator-for-Carats-to-Millimeters">
+                    <img src="/Images/CaratToMillimeter.png" alt="Project 4">
+                    <h3>Conversion Calculator for Carats to Millimeters</h3>
+                    <div class="description">
+                        <p>A calculator that converts carat weight to millimeters based on diamond shape, developed for a jewelry store by Yaniv Logi.
+
+                            Technologies Used: JavaScript, HTML, CSS</p>
+                    </div>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="https://github.com/yanivlogi/Jewelry-Pricing-Calculator/tree/main">
+                    <img src="/Images/JewelryPricingCalculator.png" alt="Project 4">
+                    <h3>Jewelry Pricing Calculator</h3>
+                    <div class="description">
+                        <p>A calculator that determines the selling price of jewelry based on gold weight, diamond size, whether the diamond is natural or CVD, and side diamonds. Developed for a jewelry company by Yaniv Logi.
+                            Technologies Used: JavaScript, HTML, CSS
+
+
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 My Portfolio. All rights reserved.</p>
+    </div>
+
+    <script>
+        // Array of image URLs
+        const images = [
+            '/Images/storage-manager-1.png',
+            '/Images/storage-manager-2.png',
+            '/Images/storage-manager-3.png',
+            '/Images/storage-manager-4.png',
+            '/Images/storage-manager-5.png'
+        ];
+
+        let currentIndex = 0;
+
+        function changeImage() {
+            const imageElement = document.getElementById('dynamic-image');
+            currentIndex = (currentIndex + 1) % images.length; // Loop back to the start
+            imageElement.src = images[currentIndex]; // Change the image
+            updateDots();
+        }
+
+        function showImage(index) {
+            currentIndex = index; // Set current index to the clicked dot index
+            const imageElement = document.getElementById('dynamic-image');
+            imageElement.src = images[currentIndex]; // Change the image
+            updateDots();
+        }
+
+        function updateDots() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        setInterval(changeImage, 3000); // Change image every 3 seconds
+    </script>
+
 </body>
 </html>
