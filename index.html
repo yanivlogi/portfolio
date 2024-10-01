@@ -316,6 +316,16 @@
 
         }
 
+        .gallery-item video {
+            width: 100%;
+            /* תשמור על התמונות בתוך רוחב הפריט */
+            height: 350px;
+            /* גובה קבוע לתמונה */
+            object-fit: scale-down;
+            /* חותך את התמונה כך שתתאים לממדים שנקבעו */
+            transition: transform 0.4s ease;
+
+        }
 
         .gallery-item h3 {
             margin: 0;
@@ -532,13 +542,23 @@
         <section class="skills" id="skills">
             <h2>Technical Skills</h2>
             <ul>
-
-                <li>Languages: JavaScript, Python, Node.js, HTML, CSS, Java, SQL, C#</li>
-                <li>Frameworks: Express.js, React, Mongoose, Handlebars</li>
-                <li>Tools: Git, Docker, Jenkins</li>
+                <li>Languages: JavaScript, Python, Node.js, HTML, CSS, Java, SQL, C#, C++</li>
+                <li>Frameworks & Libraries: Express.js, React, Mongoose, Handlebars</li>
+                <li>Tools: Git, Flipper Zero</li>
+                <li>Software: Unity (Game Development), Blender (3D Modeling)</li>
                 <li>Security: Penetration Testing, Encryption, Cybersecurity Best Practices</li>
+                <li>Mobile Development: Android Studio (Infrared Control Applications)</li>
+                <li>Special Projects: 
+                    <ul>
+                        <li>Python Aimbot (Educational Project)</li>
+                        <li>Game Development (Unity)</li>
+                        <li>Remote Control App (Android Studio - Infrared)</li>
+                        <li>Flipper Zero Gate Control</li>
+                    </ul>
+                </li>
             </ul>
         </section>
+        
 
         <!-- -------------------------------------------------------------------- -->
 
@@ -561,17 +581,17 @@
         <section class="education-section" id="education">
             <h2>Education & Certifications</h2>
             <div class="education-item">
-                <h3>Software engineer with specialization in cyber</h3>
+                <h3>Software Engineering Technician with Specialization in Cybersecurity</h3>
                 <p><strong>Institution:</strong> The College of Management</p>
                 <p><strong>Graduation Year:</strong> 2024</p>
             </div>
             <div class="certification-item">
-                <h3>WebSec - identify weaknesses. build defenses</h3>
-                <p><strong>Issuing Organization:</strong> Organization Name</p>
+                <h3>WebSec - Identify Weaknesses, Build Defenses</h3>
+                <p><strong>Issuing Organization:</strong> CYBER EDUCATION CENTER</p>
                 <p><strong>Year Obtained:</strong> 2023</p>
             </div>
         </section>
-
+        
         <!-- Blog Section -->
         <!-- <section class="blog-section">
             <h2>Insights & Blog</h2>
@@ -649,7 +669,7 @@
             <div class="gallery-item">
                 <a href="https://github.com/yanivlogi/Jewelry-Pricing-Calculator/tree/main">
                     <img src="https://github.com/yanivlogi/portfolio/blob/master/Images/JewelryPricingCalculator.png?raw=true"
-                        alt="Project 4">
+                        alt="Project 5">
                     <h3>Jewelry Pricing Calculator</h3>
                     <div class="description">
                         <p>A calculator that determines the selling price of jewelry based on gold weight, diamond size,
@@ -662,6 +682,26 @@
                     </div>
                 </a>
             </div>
+            <div class="gallery-item">
+                <a href="https://github.com/yanivlogi/AimBot">
+                    <video controls>
+                        <source src="https://github.com/yanivlogi/portfolio/blob/master/Images/AimBot.mp4?raw=true" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>AimBot</h3>
+                    <div class="description">
+                        <p>AimBot is an advanced automation tool designed to enhance productivity by automatically detecting 
+                           and clicking on specific colors displayed on the screen. This application mimics the functionality of an 
+                           aimbot, utilizing image processing techniques to analyze screen content in real time. Users can easily 
+                           input target RGB values, sample colors directly from the screen, and initiate automated clicks, making it 
+                           an invaluable asset for repetitive tasks that require precision and efficiency.</p>
+                        <p>Technologies Used: Python, Tkinter, PyAutoGUI, Win32 API</p>
+                    </div>
+                </a>
+            </div>
+            
+
+         
 
         </div>
         <!-- Testimonials Section -->
