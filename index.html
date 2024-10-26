@@ -280,6 +280,9 @@
             justify-content: center;
             gap: 20px;
             flex-grow: 1;
+            
+
+            
 
         }
 
@@ -305,26 +308,13 @@
             transform: scale(1.05);
         }
 
-        .gallery-item img {
-            width: 100%;
-            /* תשמור על התמונות בתוך רוחב הפריט */
-            height: 350px;
-            /* גובה קבוע לתמונה */
-            object-fit: scale-down;
-            /* חותך את התמונה כך שתתאים לממדים שנקבעו */
-            transition: transform 0.4s ease;
-
-        }
-
+        .gallery-item img,
         .gallery-item video {
             width: 100%;
-            /* תשמור על התמונות בתוך רוחב הפריט */
-            height: 350px;
-            /* גובה קבוע לתמונה */
-            object-fit: scale-down;
-            /* חותך את התמונה כך שתתאים לממדים שנקבעו */
-            transition: transform 0.4s ease;
-
+            height: 250px;
+            /* גובה קבוע לכל התמונות */
+            object-fit: cover;
+            /* מתאים את התמונה לתוך הממדים שנקבעו */
         }
 
         .gallery-item h3 {
@@ -347,7 +337,7 @@
 
         .description {
 
-            position: static;
+            position: sticky;
             /* Positioning below the image */
             bottom: 0;
             /* Position it above the gallery item */
@@ -370,9 +360,12 @@
 
         /* Styles for dots */
         .dots {
+           
+            display: block;
             text-align: center;
             margin-top: 20px;
             margin-bottom: 20px;
+            bottom: 0;
         }
 
         .dot {
@@ -390,13 +383,25 @@
         }
 
         .footer {
-            text-align: center;
-            background-color: #3b333389;
-            color: rgb(255, 255, 255);
-            margin-top: 20px;
-            width: 100%;
-            position: relative;
-        }
+    background-color: #333333a4; /* צבע רקע כהה */
+    color: #fff; /* צבע טקסט לבן */
+    text-align: center; /* יישור טקסט למרכז */
+    padding: 20px 0; /* ריווח פנימי מלמעלה ולמטה */
+    font-family: Arial, sans-serif; /* גופן פשוט */
+    font-size: 14px; /* גודל גופן */
+}
+
+.footer a {
+    color: #00aaff; /* צבע לינקים */
+    text-decoration: none; /* ביטול קו תחתי */
+    margin: 0 10px; /* ריווח בין לינקים */
+    transition: color 0.3s ease; /* מעבר חלק בצבע */
+}
+
+.footer a:hover {
+    color: #66ccff; /* צבע לינק בהובר */
+}
+
 
         /* עיצוב ראשי */
         nav {
@@ -471,13 +476,13 @@
                 left: 150px;
             }
 
-        
+
         }
 
         /* מסכים קטנים (טלפונים ניידים) */
         @media (max-width: 1160px) {
             .nav-title {
-              
+
                 font-size: 15px;
                 transform: translateX(-50%);
             }
@@ -505,21 +510,34 @@
                 color: white;
                 cursor: pointer;
             }
-            .gallery-item {
-    position: relative; /* כך ניתן למקם את הסרטון והתמונה ביחד */
-}
 
-#vimeo-video {
-    position: absolute; /* מוודא שהסרטון נמצא על התמונה */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none; /* הסתר ברירת מחדל */
-    z-index: 1; /* מוודא שהסרטון מעל התמונה */
-}
+            .gallery-item {
+                position: relative;
+                /* כך ניתן למקם את הסרטון והתמונה ביחד */
+            }
+
+
+
 
         }
+        .description-p{
+    min-height: 75px;
+}
+        .technologies-used {
+    background-color: #d1ecf1; /* Light blue background for technologies */
+    color: #0c5460; /* Darker text color for contrast */
+    padding: 8px 12px; /* Increased padding for better spacing */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    text-align: center; /* Center align */
+    margin-top: 10px; /* Space above */
+    border: 1px solid #bee5eb; /* Subtle border to define the section */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    min-height:70px;
+  
+}
+
     </style>
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
@@ -562,7 +580,7 @@
                 <li>Software: Unity (Game Development), Blender (3D Modeling)</li>
                 <li>Security: Penetration Testing, Encryption, Cybersecurity Best Practices</li>
                 <li>Mobile Development: Android Studio (Infrared Control Applications)</li>
-                <li>Special Projects: 
+                <li>Special Projects:
                     <ul>
                         <li>Python Aimbot (Educational Project)</li>
                         <li>Game Development (Unity)</li>
@@ -572,7 +590,7 @@
                 </li>
             </ul>
         </section>
-        
+
 
         <!-- -------------------------------------------------------------------- -->
 
@@ -605,7 +623,7 @@
                 <p><strong>Year Obtained:</strong> 2023</p>
             </div>
         </section>
-        
+
         <!-- Blog Section -->
         <!-- <section class="blog-section">
             <h2>Insights & Blog</h2>
@@ -620,32 +638,39 @@
         <section class="resume-section" id="resume-section">
             <h2>Download My Resume</h2>
             <p>If you’d like a detailed overview of my experience and skills, download my resume below.</p>
-            <a href="path/to/your-resume.pdf" download class="resume-download-btn">Download in English (PDF)</a>
-            <a href="https://github.com/yanivlogi/portfolio/blob/master/Files/Yaniv_Logi-HE.pdf" download class="resume-download-btn">הורדה בעברית (PDF)</a>
+            <a href="/Files/Yaniv_Logi_ENG.pdf" download class="resume-download-btn">Download in English (PDF)</a>
+            <a href="./Files/Yaniv_Logi-HE.pdf" download class="resume-download-btn">הורדה בעברית (PDF)</a>
         </section>
         <!-- ------------------------------------------------------------------------         -->
         <div class="gallery" id="gallery">
 
             <div class="gallery-item">
-                <a href="https://github.com/yanivlogi/ShtokFlix">
-                    <img src="https://github.com/yanivlogi/portfolio/blob/master/Images/ShtokFlix.png?raw=true"
-                        alt="Project 1">
-                        <h3>ShtokFlix</h3>
-                    </a>
-                    <div class="description">
-                        <p>Automatically skips intros on Netflix. Created by Yaniv Logi.</p>
+                <a href="https://github.com/yanivlogi/AimBot">
+                    <div style="width: auto; height: 255px; object-fit: fill;">
+                        <iframe src="https://player.vimeo.com/video/1019110366?autoplay=1&background=1" width="350"
+                            height="250" frameborder="1" allow="autoplay; fullscreen; title=" ShtokFlix></iframe>
                     </div>
+                    <script src="https://player.vimeo.com/api/player.js"></script>
+                    <h3>ShtokFlix</h3>
+                    <div class="description">
+                        <p class="description-p">Automatically skips intros on Netflix. Developed by Yaniv Logi.</p>
+                        <p class="technologies-used">Technologies Used: JavaScript, DOM Manipulation</p>
+
+                    </div>
+                </a>
             </div>
+
             <div class="gallery-item">
                 <a href="https://github.com/yanivlogi/DirRenamerPro">
                     <img src="https://github.com/yanivlogi/portfolio/blob/master/Images/DirRenamerPro.png?raw=true"
                         alt="Project 2">
                     <h3>DirRenamer</h3>
                 </a>
-                    <div class="description">
-                        <p>DirRenamer is a Python script designed to simplify the process of batch renaming directories.
-                        </p>
-                    </div>
+                <div class="description">
+                    <p class="description-p">Python script for renaming directories with a prefix and numbering. Converted to EXE for easy
+                        use.</p>
+                    <p class="technologies-used">Technologies Used: Python, OS Module, PyInstaller</p>
+                </div>
             </div>
 
             <div class="gallery-item">
@@ -656,8 +681,9 @@
                     <h3>Inventory Management System</h3>
                 </a>
                 <div class="description">
-                    <p>An inventory management system that features barcode scanning for accurate stock tracking and
-                        real-time inventory monitoring, designed to enhance operational efficiency in retail environments.</p>
+                    <p class="description-p">An inventory management system with barcode scanning for efficient stock tracking and real-time
+                        monitoring.</p>
+                    <p class="technologies-used">Technologies Used: JavaScript, Node.js, Express, MongoDB, Handlebars, CSS, Bootstrap</p>
                 </div>
                 <div id="dynamic-image-dots" class="dots">
                     <span class="dot active" onmouseover="showImage('dynamic-image', StorageManagerImages, 0)"></span>
@@ -667,36 +693,41 @@
                     <span class="dot" onmouseover="showImage('dynamic-image', StorageManagerImages, 4)"></span>
                 </div>
             </div>
-            
+
             <div class="gallery-item">
                 <a href="https://github.com/yanivlogi/Conversion-Calculator-for-Carats-to-Millimeters">
                     <img src="https://github.com/yanivlogi/portfolio/blob/master/Images/CaratToMillimeter.png?raw=true"
                         alt="Project 4">
                     <h3>Conversion Calculator for Carats to Millimeters</h3>
                 </a>
-                    <div class="description">
-                        <p>A calculator that converts carat weight to millimeters based on diamond shape, developed for
-                            a jewelry store by Yaniv Logi.
+                <div class="description">
+                    <p class="description-p">Calculates carat weight to millimeters for diamond shapes. Developed for a jewelry store.</p>
+                    <p class="technologies-used">Technologies Used: JavaScript, HTML, CSS</p>
 
-                            Technologies Used: JavaScript, HTML, CSS</p>
-                    </div>
+                </div>
             </div>
             <div class="gallery-item">
                 <a href="https://github.com/yanivlogi/Full-Project">
-                    <div style="position: relative;">
+                    <div style="width: auto; height: 255px; object-fit: fill;">
                         <img id="dynamic-image-pethouse" src="./images/pethouse.png" alt="PetHouse">
                         <div id="vimeo-video" style="display: none;">
-                            <iframe src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
-                                style="width: 100%; height: 100%;" title="PetHouse Video"></iframe>
+                            <iframe
+                                src="https://player.vimeo.com/video/1016701495?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                                width="350" height="197" frameborder="0"
+                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                                title="PetHouse Project"></iframe>
                         </div>
                     </div>
-                    <h3>PetHouse</h3>
+                    <h3>PetHouse - Animal Adoption Platform</h3>
                 </a>
                 <div class="description">
-                    <p>PetHouse is a platform designed to help animals find new homes.</p>
+                    <p class="description-p">Web app connecting stray animals with adopters securely.</p>
+                    <p class="technologies-used">Technologies Used: JavaScript, React.js, Node.js, MongoDB, CSS, Bootstrap.</p>
+              
                 </div>
                 <div id="dynamic-image-pethouse-dots" class="dots">
-                    <span class="dot active" onmouseover="showImage('dynamic-image-pethouse', PetHouseImages, 0)"></span>
+                    <span class="dot active"
+                        onmouseover="showImage('dynamic-image-pethouse', PetHouseImages, 0)"></span>
                     <span class="dot" onmouseover="showImage('dynamic-image-pethouse', PetHouseImages, 1)"></span>
                     <span class="dot" onmouseover="showImage('dynamic-image-pethouse', PetHouseImages, 2)"></span>
                     <span class="dot" onmouseover="showImage('dynamic-image-pethouse', PetHouseImages, 3)"></span>
@@ -705,42 +736,61 @@
                     <span class="dot" onmouseover="showImage('dynamic-image-pethouse', PetHouseImages, 6)"></span>
                 </div>
             </div>
-            
-            
-            
+
+
+
             <div class="gallery-item">
                 <a href="https://github.com/yanivlogi/Jewelry-Pricing-Calculator/tree/main">
                     <img src="https://github.com/yanivlogi/portfolio/blob/master/Images/JewelryPricingCalculator.png?raw=true"
                         alt="Project 5">
                     <h3>Jewelry Pricing Calculator</h3>
                 </a>
-                    <div class="description">
-                        <p>A calculator that determines the selling price of jewelry based on gold weight, diamond size,
-                            whether the diamond is natural or CVD, and side diamonds. Developed for a jewelry company by
-                            Yaniv Logi.
-                            Technologies Used: JavaScript, HTML, CSS
+                <div class="description">
+                    <p class="description-p">Calculates jewelry prices based on gold weight and diamond characteristics.</p>
+                    <p class="technologies-used">Technologies Used: JavaScript, HTML, CSS</p>
 
-
-                        </p>
-                    </div>
+                </div>
             </div>
             <div class="gallery-item">
                 <a href="https://github.com/yanivlogi/AimBot">
-                    <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1014817136?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="AimBot"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-                    <h3>AimBot</h3>
-                    <div class="description">
-                        <p>AimBot is an advanced automation tool designed to enhance productivity by automatically detecting 
-                        </a>
-                           and clicking on specific colors displayed on the screen. This application mimics the functionality of an 
-                           aimbot, utilizing image processing techniques to analyze screen content in real time. Users can easily 
-                           input target RGB values, sample colors directly from the screen, and initiate automated clicks, making it 
-                           an invaluable asset for repetitive tasks that require precision and efficiency.</p>
-                        <p>Technologies Used: Python, Tkinter, PyAutoGUI, Win32 API</p>
+                    <div style="width: auto; height: 255px; object-fit: fill;"><iframe
+                            src="https://player.vimeo.com/video/1014817136??autoplay=1&background=1" width="350"
+                            height="250" frameborder="1"
+                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="AimBot"></iframe>
                     </div>
+                    <script src="https://player.vimeo.com/api/player.js"></script>
+                    <h3>AimBot</h3>
+                </a>
+                <div class="description">
+                    <p class="description-p">Automation tool that enhances productivity by detecting and clicking specific colors on screen.
+                    </p>
+                    <p class="technologies-used">Technologies Used: Python, Tkinter, PyAutoGUI, Win32 API</p>
+
+                </div>
+            </div>
+            <div class="gallery-item">
+                <a href="https://github.com/yanivlogi/Survival">
+                    <div style="padding:45% 0 0 0;position:relative;">
+                        <iframe src="https://player.vimeo.com/video/1023583210?autoplay=1&background=1" 
+                            frameborder="0" 
+                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                            title="INSECT ATTACK">
+                        </iframe>
+                    </div><script src="https://player.vimeo.com/api/player.js"></script>
+                    <h3>INSECT ATTACK</h3>
+                </a>
+                <div class="description">
+                    <p class="description-p">
+                        A 2D mobile game developed in Unity, focusing on survival mechanics. Players defeat monsters to collect items that enhance abilities like increased HP, faster shooting speed, and quicker movement.
+                    </p>
+                    <p class="technologies-used">
+                        Technologies Used: Unity, C#, Mobile UI Design, 2D Graphics
+                    </p>
+                </div>
             </div>
             
 
-         
 
         </div>
         <!-- Testimonials Section -->
@@ -791,7 +841,7 @@
             './images/pethouse6.png',
             'https://vimeo.com/1016701495' // הוסף כאן את קישור ה-Vimeo
         ];
-        
+
         // Array of image URLs for Storage Manager
         const StorageManagerImages = [
             'https://github.com/yanivlogi/portfolio/blob/master/Images/storage-manager-1.png?raw=true',
@@ -800,49 +850,74 @@
             'https://github.com/yanivlogi/portfolio/blob/master/Images/storage-manager-4.png?raw=true',
             'https://github.com/yanivlogi/portfolio/blob/master/Images/storage-manager-5.png?raw=true'
         ];
-        
+
         let currentIndexPetHouse = 0;
         let currentIndexStorageManager = 0;
-        
+
         function changeImage(elementId, images, currentIndex) {
             const imageElement = document.getElementById(elementId);
             currentIndex = (currentIndex + 1) % images.length;
             imageElement.src = images[currentIndex];
+            showImage('dynamic-image-pethouse', PetHouseImages, currentIndex)
             updateDots(elementId, currentIndex);
             return currentIndex;
         }
-        
+
         function showImage(elementId, images, index) {
-    const imageElement = document.getElementById(elementId);
-    const vimeoContainer = document.getElementById('vimeo-video');
+            const imageElement = document.getElementById(elementId);
+            const vimeoContainer = document.getElementById('vimeo-video');
 
-    if (images[index].includes('vimeo.com')) {
-        const videoId = images[index].split('/').pop(); // Get the video ID
-        vimeoContainer.style.display = 'block'; // Show the Vimeo container
-        vimeoContainer.innerHTML = `<iframe src="https://player.vimeo.com/video/${videoId}?autoplay=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="width: 100%; height: 315px;" title="PetHouse Video"></iframe>`;
-        imageElement.style.display = 'none'; // Hide the image
-    } else {
-        imageElement.src = images[index];
-        imageElement.style.display = 'block'; // Show the image
-        vimeoContainer.style.display = 'none'; // Hide the Vimeo container
-    }
+            if (images[index].includes('vimeo.com')) {
+                const videoId = images[index].split('/').pop(); // Get the video ID
+                vimeoContainer.style.display = 'block'; // Show the Vimeo container
+                vimeoContainer.innerHTML = `<iframe src="https://player.vimeo.com/video/${videoId}?autoplay=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="width: 350px; height:250px; " title="PetHouse Video"></iframe>`;
+                imageElement.style.display = 'none'; // Hide the image
+            } else {
+                imageElement.src = images[index];
+                imageElement.style.display = 'block'; // Show the image
+                vimeoContainer.style.display = 'none'; // Hide the Vimeo container
+            }
 
-    updateDots(elementId, index);
-}
+            updateDots(elementId, index);
+        }
 
-        
+
         function updateDots(elementId, index) {
             const dots = document.querySelectorAll(`#${elementId}-dots .dot`);
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === index);
             });
         }
-        
+
         // הפעלת דפדוף תמונות עבור PetHouse
+        let isMouseOver = false;
+        const image = document.getElementById("gallery");
+
+        // האזנה לאירועים על האלמנט
+        image.addEventListener("mouseover", () => {
+            isMouseOver = true;
+        });
+
+        image.addEventListener("mouseleave", () => {
+            isMouseOver = false;
+        });
+
         setInterval(() => {
-            currentIndexPetHouse = changeImage('dynamic-image-pethouse', PetHouseImages, currentIndexPetHouse);
-        }, 3000); // שינוי תמונה כל 3 שניות
-        </script>
+            // נבדוק אם העכבר לא נמצא מעל האלמנט
+            if (!isMouseOver) {
+                currentIndexPetHouse = changeImage('dynamic-image-pethouse', PetHouseImages, currentIndexPetHouse);
+            }
+        }, 2000); // שינוי תמונה כל 2 שניות
+
+        setInterval(() => {
+            // נבדוק אם העכבר לא נמצא מעל האלמנט
+            if (!isMouseOver) {
+                currentIndexStorageManager = changeImage('dynamic-image', StorageManagerImages, currentIndexStorageManager);
+            }
+        }, 2000); // שינוי תמונה כל 2 שניות
+
+
+    </script>
 </body>
 
 </html>
