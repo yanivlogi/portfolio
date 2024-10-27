@@ -33,7 +33,8 @@
 
         .contact-section input,
         .contact-section textarea {
-            padding: 10px;
+            padding-bottom: 15px;
+            padding-top: 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
             width: 100%;
@@ -42,11 +43,14 @@
         }
 
         .contact-section button {
-            padding: 10px 20px;
+            padding: 20px 60px;
             background-color: #43a4e1;
             color: white;
             border: none;
             border-radius: 5px;
+            display: block;
+  margin: 0 auto; /* מרכז את הכפתור אופקית */
+  width: fit-content; /* רוחב הכפתור יתאים לתוכן שלו */
             cursor: pointer;
         }
 
@@ -72,6 +76,8 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            margin: 2px;
+            width: 130px;
         }
 
         .resume-download-btn:hover {
@@ -89,6 +95,7 @@
 
         /* ------------------------------------------------------------ */
         body {
+            padding-top: 30px;
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             min-height: 100vh;
@@ -234,12 +241,7 @@
             animation: fadeInUp 1.5s ease-in-out;
         }
 
-        .skills ul li::after {
-            content: " ✓";
-            color: #7be5fc;
-            margin-right: 10px;
-            font-weight: bold;
-        }
+       
 
         .skill-bar {
             background-color: #ddd;
@@ -280,10 +282,14 @@
             justify-content: center;
             gap: 20px;
             flex-grow: 1;
-            
+           
 
             
 
+        }
+
+        #sample-projects{
+            scroll-margin-top: 110px;
         }
 
         .gallery .gallery-item {
@@ -552,7 +558,7 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#education">Education</a></li>
-            <li><a href="#gallery">Projects</a></li>
+            <li><a href="#sample-projects">Projects</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -574,18 +580,21 @@
         <section class="skills" id="skills">
             <h2>Technical Skills</h2>
             <ul>
-                <li>Languages: JavaScript, Python, Node.js, HTML, CSS, Java, SQL, C#, C++</li>
+                <li>Languages: JavaScript, Python, Node.js, HTML, CSS, Java, SQL, C#</li>
                 <li>Frameworks & Libraries: Express.js, React, Mongoose, Handlebars</li>
                 <li>Tools: Git, Flipper Zero</li>
-                <li>Software: Unity (Game Development), Blender (3D Modeling)</li>
+                <li>Software: Unity (Game Development), Blender (3D Modeling) , Postman</li>
                 <li>Security: Penetration Testing, Encryption, Cybersecurity Best Practices</li>
                 <li>Mobile Development: Android Studio (Infrared Control Applications)</li>
-                <li>Special Projects:
+                <li style="font-size: 22px; font-weight: bold; color: #00d0f9; margin-bottom: 20px; margin-top: 50px;">Special Projects:</li>
+
                     <ul>
                         <li>Python Aimbot (Educational Project)</li>
                         <li>Game Development (Unity)</li>
                         <li>Remote Control App (Android Studio - Infrared)</li>
                         <li>Flipper Zero Gate Control</li>
+                        <a href="#sample-projects" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Sample projects...</a>
+
                     </ul>
                 </li>
             </ul>
@@ -642,8 +651,9 @@
             <a href="./Files/Yaniv_Logi-HE.pdf" download class="resume-download-btn">הורדה בעברית (PDF)</a>
         </section>
         <!-- ------------------------------------------------------------------------         -->
+        <h1  id="sample-projects" style="color: #ffffff; background-color: #66ccff8e;">Sample Projects</h1>
         <div class="gallery" id="gallery">
-
+            
             <div class="gallery-item">
                 <a href="https://github.com/yanivlogi/AimBot">
                     <div style="width: auto; height: 255px; object-fit: fill;">
@@ -827,11 +837,38 @@
     <footer class="footer">
         <p>© 2024 Yaniv Logi Portfolio. All rights reserved.</p>
         <a href="https://github.com/yanivlogi" target="_blank">GitHub</a> |
-        <a href="https://www.linkedin.com/in/yanivlogi" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/yaniv-logi-461905232/" target="_blank">LinkedIn</a> |
+        <a href="https://www.instagram.com/yaniv_logi/" target="_blank">Instagram</a> |
+        <a href="https://www.facebook.com/yanivlo72/" target="_blank">Facebook</a> |
+        <a href="mailto:yanivlogi1@gmail.com" target="_blank">Gmail</a>
+
+
+
     </footer>
 
 
     <script>
+
+function toggleMenu() {
+            const menu = document.querySelector('nav ul.menu');
+            menu.classList.toggle('active');
+        }
+        document.querySelectorAll('nav ul.menu li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const offset = 90; // גובה התפריט הקבוע שלך
+
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition - offset;
+
+                window.scrollBy({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
         const PetHouseImages = [
             './images/pethouse.png',
             './images/pethouse2.png',
