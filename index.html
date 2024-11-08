@@ -17,13 +17,14 @@
         .education-section,
         .blog-section,
         .resume-section {
-            background-color: #ffffff;
-            color: #333;
+            background: linear-gradient(10deg, #09c1e67a 20%, #1d4fa677 80%);
+
+            color: white;
             padding: 20px;
             margin: 50px auto;
             border-radius: 10px;
             max-width: 900px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 234, 255, 0.765);
             text-align: center;
         }
 
@@ -45,14 +46,7 @@
         }
 
         .contact-section button {
-            padding: 20px 60px;
-            background-color: #43a4e1;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            display: block;
-  margin: 0 auto; /* מרכז את הכפתור אופקית */
-  width: fit-content; /* רוחב הכפתור יתאים לתוכן שלו */
+            margin: 0 auto; /* מרכז את הכפתור אופקית */
             cursor: pointer;
         }
 
@@ -62,7 +56,10 @@
 
         .testimonial p {
             font-style: italic;
-            color: #555;
+            color: #ffffff;
+            font-size: 18px;
+            text-align: center; 
+
         }
 
         .experience-item,
@@ -73,17 +70,20 @@
 
         .resume-download-btn {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #009687;
-            color: white;
+            padding: 15px 40px;
+            box-shadow: 0 1px 15px rgb(0, 234, 255);
+            background-color: #00000067;
+            border-radius: 50px;
+            color: rgb(255, 255, 255); text-decoration: none;
+            font-weight: bold;
             text-decoration: none;
-            border-radius: 5px;
-            margin: 2px;
+            margin: 15px;
             width: 130px;
         }
 
         .resume-download-btn:hover {
-            background-color: #00796b;
+            background-color: #001516;
+            box-shadow: 0 1px 15px rgba(0, 234, 255, 0);
         }
 
         .blog-post {
@@ -103,8 +103,10 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background-image: url('https://github.com/yanivlogi/portfolio/blob/master/Images/bg-image.jpg?raw=true');
-            background-repeat: round;
+            background-image: url("./Images/freepik-export-20241108131727Gzel.jpeg");
+            background-repeat: repeat;
+            background-position: right top;
+            
         }
 
         body.dark-mode {
@@ -218,7 +220,7 @@
             margin: 50px auto;
             border-radius: 15px;
             max-width: 900px;
-            box-shadow: 0 10px 30px rgb(0, 234, 255);
+            box-shadow: 0 10px 30px rgba(0, 234, 255, 0.765);
             animation: fadeInUp 1.5s ease-in-out;
             font-family: 'Heebo', sans-serif;
         }
@@ -390,36 +392,41 @@
             background-color: #333;
         }
         .footer {
-    background-color: #333333a4;
-    color: #fff;
+    background-color: #000000; /* צבע כהה תואם להדר */
+    color: white;
     text-align: center;
     padding: 20px 0;
     font-family: Arial, sans-serif;
     font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer p {
     margin-bottom: 10px;
+    color: #aaa; /* צבע טקסט עדין יותר */
 }
 
 .footer a {
-    color: #00aaff;
+    color: #00aaff; /* צבע תואם להדר */
     text-decoration: none;
     margin: 0 15px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease; /* מעבר חלק */
     display: inline-flex;
     align-items: center;
     white-space: nowrap; /* מונע שבירת שורות */
+    font-weight: bold;
 }
 
 .footer a i {
     margin-right: 5px;
+    color: #00aaff;
 }
 
-.footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.footer a:hover {
+    color: #00e6ff; /* צבע בהיר יותר במעבר עכבר */
+    transform: scale(1.1); /* הגדלה קלה */
 }
 
 .footer div {
@@ -431,9 +438,10 @@
 
 
 
+
         /* עיצוב ראשי */
         nav {
-            background-color: #333;
+            background-color: #000000;
             padding: 15px;
             position: fixed;
             top: 0;
@@ -480,18 +488,35 @@
         }
 
         nav ul.menu li a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            display: block;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease; /* אפקט מעבר עבור גודל הטקסט וצבע */
+}
 
-        nav ul.menu li a:hover {
-            background-color: #43a4e1a3;
-            border-radius: 5px;
-        }
+nav ul.menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #00aaff;
+    transition: width 0.3s ease;
+}
+
+nav ul.menu li a:hover {
+    transform: scale(1.1); /* הגדלת הטקסט במעבר עכבר */
+    color: #00aaff; /* שינוי צבע הטקסט */
+}
+
+nav ul.menu li a:hover::after {
+    width: 100%; /* התפשטות הקו התחתון */
+}
 
         main {
             margin-top: 80px;
@@ -524,7 +549,7 @@
                 top: 60px;
                 left: 0;
                 width: 100%;
-                background-color: #333;
+                
                 padding: 0;
             }
 
@@ -567,6 +592,25 @@
   
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #43a4e1a3;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #1183cac3;
+}
     </style>
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
@@ -591,32 +635,65 @@
 <body>
 
     <div class="container">
-
         <section class="about-me" id="about-me">
-            <h2>About Me</h2>
-            <p>Hello, I'm Yaniv Logi, a Software Engineering Technician who specializing in cybersecurity. I have a strong
-                foundation in web development, backend systems, and cybersecurity practices. With hands-on experience in
-                creating efficient software solutions, I have developed tools and systems ranging from inventory
-                management to complex jewelry pricing calculators. My goal is to leverage my technical skills to provide
-                innovative, secure, and scalable solutions for businesses in various industries.</p>
+            <img src="/Images/Me.jpg" alt="Yaniv Logi" style="width: 100%; border-radius: 30px; margin-bottom: -50px; z-index: 1; position: relative; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);" />
+        
+            <div style="padding-top: 70px; padding-bottom: 20px; max-width: 600px; margin: auto;" >
+                <div style="display: flex; margin-bottom: 10px;">
+                    <span style="font-size: 18px; margin-right: 50px; align-items: left">👤</span>
+                    <span style="width: 30%; text-align: left; font-weight: bold;">Name:</span>
+                    <span style="width: 70%; text-align: left;">Yaniv Logi</span>
+                </div>
+        
+                <div style="display: flex; margin-bottom: 10px;">
+                    <span style="font-size: 18px; margin-right: 50px; align-items: left;">🎂</span>
+                    <span style="width: 30%; text-align: left; font-weight: bold;">Age:</span>
+                    <span style="width: 70%; text-align: left;">26</span>
+                </div>
+        
+                <div style="display: flex; margin-bottom: 10px;">
+                    <span style="font-size: 18px; margin-right: 50px; align-items: left">📍</span>
+                    <span style="width: 30%; text-align: left;  font-weight: bold;">Location:</span>
+                    <span style="width: 70%; text-align: left;">Rishon LeZion, Israel</span>
+                </div>
+        
+                <div style="display: flex; margin-bottom: 10px;">
+                    <span style="font-size: 18px; margin-right: 50px; align-items: left">💼</span>
+                    <span style="width: 30%; text-align: left;  font-weight: bold;">Experience:</span>
+                    <span style="width: 70%; text-align: left;">3 Years in Software Development</span>
+                </div>
+        
+                <div style="display: flex; margin-bottom: 10px;">
+                    <span style="font-size: 18px; margin-right: 50px; align-items: left">📧</span>
+                    <span style="width: 30%; text-align: left;  font-weight: bold;">Mail:</span>
+                    <span style="width: 70%; text-align: left;">yanivlogi1@gmail.com</span>
+                </div>
+            </div>
+        
+            <p style="line-height: 1.6;  max-width: 75ch; margin: 20px; padding-top: 20px;">
+                Hello, I'm Yaniv Logi, a Software Engineering Technician specializing in cybersecurity. I have a strong foundation in web development, backend systems, and cybersecurity practices. With hands-on experience in creating efficient software solutions, I have developed tools and systems ranging from inventory management to complex jewelry pricing calculators. My goal is to leverage my technical skills to provide innovative, secure, and scalable solutions for businesses in various industries.
+            </p>
         </section>
+        
+        
+        
         <section class="skills" id="skills">
             <h2>Technical Skills</h2>
-            <ul>
-                <li>Languages: JavaScript, Python, Node.js, HTML, CSS, Java, SQL, C#</li>
-                <li>Frameworks & Libraries: Express.js, React, Mongoose, Handlebars</li>
-                <li>Tools: Git, Flipper Zero</li>
-                <li>Software: Unity (Game Development), Blender (3D Modeling) , Postman</li>
-                <li>Security: Penetration Testing, Encryption, Cybersecurity Best Practices</li>
-                <li>Mobile Development: Android Studio (Infrared Control Applications)</li>
-                <li style="font-size: 22px; font-weight: bold; color: #00d0f9; margin-bottom: 20px; margin-top: 50px;">Special Projects:</li>
+            <ul style="padding-bottom: 20px;">
+                <li><strong style="font-size: x-large;">Software:<br> </strong> Unity (Game Development), Blender (3D Modeling) , Postman</li>
+                <li><strong style="font-size: x-large;">Security: <br></strong> Penetration Testing, Encryption, Cybersecurity Best Practices</li>
+                <li><strong style="font-size: x-large;">Languages: <br></strong>JavaScript, Python, Node.js, HTML, CSS, Java, SQL, C#</li>
+                <li><strong style="font-size: x-large;">Mobile Development: <br></strong> Android Studio (Infrared Control Applications)</li>
+                <li><strong style="font-size: x-large;">Frameworks & Libraries: <br></strong> Express.js, React, Mongoose, Handlebars</li>
+                <li><strong style="font-size: x-large;">Tools: <br></strong> Git, Flipper Zero</li>
+                <li style="font-size: 22px; font-weight: bold; color: #00d0f9; margin-bottom: 10px; margin-top: 50px;">Special Projects:</li>
 
                     <ul>
+                        <li>Remote Control App (Android Studio - Infrared)</li>
                         <li>Python Aimbot (Educational Project)</li>
                         <li>Game Development (Unity)</li>
-                        <li>Remote Control App (Android Studio - Infrared)</li>
                         <li>Flipper Zero Gate Control</li>
-                        <a href="#sample-projects" style="display: inline-block; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">Sample projects...</a>
+                        <a class="resume-download-btn " href="#sample-projects">See More</a>
 
                     </ul>
                 </li>
@@ -632,7 +709,7 @@
         <section class="experience-section" id="experience">
             <h2>Work Experience</h2>
             <div class="experience-item">
-                <h3><a href="https://eliana.diamonds/" style="text-decoration: none;">Eliana Diamonds</a></h3>
+                <h3><a href="https://eliana.diamonds/" style="color: white; font-weight: bold;">Eliana Diamonds</a> 🔗</h3>
                 <p><strong>Position:</strong> VP of Digital and Development</p>
                 <p><strong>Dates:</strong> 2023 - today</p>
                 <p>Managed and led the digital and development department, including the maintenance and enhancement of
@@ -833,6 +910,7 @@
                 <p>"Yaniv is a highly skilled technician. His solutions always meet our business needs perfectly."</p>
                 <span>- Ammnon Yousupov, Owner of a jewelry manufacturing company</span>
             </div>
+            <br>
             <div class="testimonial">
                 <p>"Working with Yaniv has been a pleasure. He brings innovative ideas to every project."</p>
                 <span>- Avital Ben lulu, Graphic and web designer </span>
@@ -852,7 +930,7 @@
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="4" required></textarea>
 
-                <button type="submit">Send</button>
+                <button style="border:none;" class="resume-download-btn" type="submit">Send</button>
             </form>
         </section>
     </div>
