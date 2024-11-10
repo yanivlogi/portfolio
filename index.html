@@ -10,7 +10,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');
 
-        html{
+        html {
             scroll-behavior: smooth;
         }
 
@@ -22,7 +22,6 @@
         .blog-section,
         .resume-section {
             background: linear-gradient(10deg, #09c1e67a 20%, #1d4fa677 80%);
-
             color: white;
             padding: 20px;
             margin: 50px auto;
@@ -40,11 +39,10 @@
 
         .contact-section input,
         .contact-section textarea {
-            caret-shape: underscore;
-            font-size: x-large;
+            caret-color: rgb(0, 234, 255);
+            font-size: large;
             color: #ffffff;
-            padding-bottom: 15px;
-            padding-top: 15px;
+            padding: 10px 15px 10px 15px;
             border: 1px solid #ccc;
             border-radius: 5px;
             width: 100%;
@@ -52,14 +50,16 @@
             margin: 0 auto;
             background-color: #0015166b;
             box-shadow: 0px 3px 7px rgba(0, 234, 255, 0.638),
-     2px 0px 4px rgba(0, 234, 255, 0.638),
-     -2px 0px 4px rgba(0, 234, 255, 0.638),
-     0px -2px 4px rgba(0, 234, 255, 0.638),
-     0px 0px 20px rgb(255, 255, 255); /* צל כחול זוהר */
+                2px 0px 4px rgba(0, 234, 255, 0.638),
+                -2px 0px 4px rgba(0, 234, 255, 0.638),
+                0px -2px 4px rgba(0, 234, 255, 0.638),
+                0px 0px 20px rgb(255, 255, 255);
+            /* צל כחול זוהר */
         }
 
         .contact-section button {
-            margin: 20px auto; /* מרכז את הכפתור אופקית */
+            margin: 20px auto;
+            /* מרכז את הכפתור אופקית */
             cursor: pointer;
         }
 
@@ -71,7 +71,7 @@
             font-style: italic;
             color: #ffffff;
             font-size: 18px;
-            text-align: center; 
+            text-align: center;
 
         }
 
@@ -87,7 +87,8 @@
             box-shadow: 0 1px 15px rgb(0, 234, 255);
             background-color: #00000067;
             border-radius: 50px;
-            color: rgb(255, 255, 255); text-decoration: none;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
             font-weight: bold;
             text-decoration: none;
             margin: 15px;
@@ -119,7 +120,7 @@
             background-image: url("./Images/freepik-export-20241108131727Gzel.jpeg");
             background-repeat: repeat;
             background-position: right top;
-            
+
         }
 
         body.dark-mode {
@@ -134,9 +135,8 @@
         }
 
 
-        .about-me {
+        .about-me-custom {
             background: linear-gradient(10deg, #09c1e67a 20%, #1d4fa677 80%);
-            /* גוונים של טורקיז וירוק */
             color: white;
             padding: 20px 20px;
             text-align: center;
@@ -144,12 +144,11 @@
             border-radius: 15px;
             max-width: 900px;
             box-shadow: 0 10px 30px rgb(0, 234, 255);
-            animation: fadeInUp 1.5s ease-in-out;
             position: relative;
             overflow: hidden;
         }
 
-        .about-me::before {
+        .about-me-custom::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -160,7 +159,7 @@
             animation: rotateBg 10s linear infinite;
         }
 
-        .about-me h2 {
+        .about-me-custom h2 {
             font-size: 36px;
             margin-bottom: 20px;
             letter-spacing: 1px;
@@ -168,61 +167,71 @@
             animation: bounceIn 1.5s ease-out;
         }
 
-        .about-me p {
+        .about-me-custom p {
             font-size: 20px;
             line-height: 1.8;
-            margin: 0 auto;
-            max-width: 750px;
-            animation: fadeInUp 1.5s ease-in-out;
+            margin: auto;
             color: #fff;
-            /* צבע טקסט לבן */
             font-family: "Heebo", system-ui;
             font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
+            padding-left: 30px;
+            padding-right: 25px;
+        }
+
+        .profile-image-custom {
+            width: 100%;
+            border-radius: 30px;
+            margin-bottom: -50px;
+            z-index: 1;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-container-custom {
+            padding-top: 70px;
+            padding-bottom: 20px;
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .info-item-custom {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            /* ריווח אחיד בין הפרטים */
+            border-bottom: #217fae65 solid 2px;
+        }
+
+        .icon-custom {
+            font-size: 18px;
+            margin-right: 20px;
+            min-width: 24px;
+            /* יישור אחיד של האייקונים */
+        }
+
+        .label-custom {
+            width: 50%;
+            font-weight: bold;
+        }
+
+        .value-custom {
+            width: 50%;
+        }
+
+        .description-custom {
+            margin: 20px;
+            padding: 20px;
+            text-align: left;
+            background-color: #0c363e57;
+            border-radius: 1.5cap;
+
         }
 
 
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(40px);
-            }
 
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes rotateBg {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes bounceIn {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
-                transform: translateY(0);
-            }
-
-            40% {
-                transform: translateY(-20px);
-            }
-
-            60% {
-                transform: translateY(-10px);
-            }
-        }
 
         .skills {
             background: linear-gradient(10deg, #09c1e67a 20%, #1d4fa677 80%);
@@ -258,8 +267,6 @@
             animation: fadeInUp 1.5s ease-in-out;
         }
 
-       
-
         .skill-bar {
             background-color: #ddd;
             border-radius: 5px;
@@ -293,70 +300,72 @@
             font-size: 36px;
         }
 
-     
+
         .gallery {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
             flex-grow: 1;
-           
+        }
 
-            
+        .title-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            /* ממלא את הגובה הפנוי */
+            text-align: center;
 
         }
-        .title-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1; /* ממלא את הגובה הפנוי */
-  text-align: center;
- 
-}
 
-#sample-projects {
-   
-    scroll-margin-top: 110px;
-  color: #000000be;
-  font-size: 8ch;
-  font-weight: 700;
-  text-shadow:
-     0px 3px 7px rgba(0, 234, 255, 0.638),
-     3px 0px 7px rgba(0, 234, 255, 0.638),
-     -3px 0px 7px rgba(0, 234, 255, 0.638),
-     0px -3px 7px rgba(0, 234, 255, 0.638),
-     0px 0px 20px rgb(255, 255, 255);
-  letter-spacing: 0.4rem;
-  word-spacing: 2rem;
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  padding-bottom: 10px;
-}
+        #sample-projects {
 
-#sample-projects::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 3px; /* עובי הקו */
-  background-color: #000000be;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 0 20px; /* מרחיב את הקו 20 פיקסלים מכל צד */
-  border-radius: 1.5px; /* חצי מהגובה כדי ליצור קצוות עגולים */
-  transition: width 2s ease;
-  box-shadow: 0px 3px 7px rgba(0, 234, 255, 0.638),
-     2px 0px 4px rgba(0, 234, 255, 0.638),
-     -2px 0px 4px rgba(0, 234, 255, 0.638),
-     0px -2px 4px rgba(0, 234, 255, 0.638),
-     0px 0px 20px rgb(255, 255, 255); /* צל כחול זוהר */
-}
+            scroll-margin-top: 110px;
+            color: #000000be;
+            font-size: 8ch;
+            font-weight: 700;
+            text-shadow:
+                0px 3px 7px rgba(0, 234, 255, 0.638),
+                3px 0px 7px rgba(0, 234, 255, 0.638),
+                -3px 0px 7px rgba(0, 234, 255, 0.638),
+                0px -3px 7px rgba(0, 234, 255, 0.638),
+                0px 0px 20px rgb(255, 255, 255);
+            letter-spacing: 0.4rem;
+            word-spacing: 2rem;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            padding-bottom: 10px;
+        }
 
-#sample-projects.active::after {
-  width: calc(100% + 110px); /* קו רחב יותר מהטקסט */
-}
+        #sample-projects::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 3px;
+            /* עובי הקו */
+            background-color: #000000be;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0 20px;
+            /* מרחיב את הקו 20 פיקסלים מכל צד */
+            border-radius: 1.5px;
+            /* חצי מהגובה כדי ליצור קצוות עגולים */
+            transition: width 2s ease;
+            box-shadow: 0px 3px 7px rgba(0, 234, 255, 0.638),
+                2px 0px 4px rgba(0, 234, 255, 0.638),
+                -2px 0px 4px rgba(0, 234, 255, 0.638),
+                0px -2px 4px rgba(0, 234, 255, 0.638),
+                0px 0px 20px rgb(255, 255, 255);
+            /* צל כחול זוהר */
+        }
 
+        #sample-projects.active::after {
+            width: calc(100% + 110px);
+            /* קו רחב יותר מהטקסט */
+        }
 
 
         .gallery .gallery-item {
@@ -429,11 +438,9 @@
             /* Add padding for appearance */
         }
 
-
-
         /* Styles for dots */
         .dots {
-           
+
             display: block;
             text-align: center;
             margin-top: 20px;
@@ -454,50 +461,58 @@
         .dot.active {
             background-color: #333;
         }
+
         .footer {
-    background-color: #001516a1; /* צבע כהה תואם להדר */
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+            background-color: #001516a1;
+            /* צבע כהה תואם להדר */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-.footer p {
-    margin-bottom: 10px;
-    color: #aaa; /* צבע טקסט עדין יותר */
-}
+        .footer p {
+            margin-bottom: 10px;
+            color: #aaa;
+            /* צבע טקסט עדין יותר */
+        }
 
-.footer a {
-    color: #00aaff; /* צבע תואם להדר */
-    text-decoration: none;
-    margin: 0 15px;
-    transition: color 0.3s ease, transform 0.3s ease; /* מעבר חלק */
-    display: inline-flex;
-    align-items: center;
-    white-space: nowrap; /* מונע שבירת שורות */
-    font-weight: bold;
-}
+        .footer a {
+            color: #00aaff;
+            /* צבע תואם להדר */
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            /* מעבר חלק */
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+            /* מונע שבירת שורות */
+            font-weight: bold;
+        }
 
-.footer a i {
-    margin-right: 5px;
-    color: #00aaff;
-}
+        .footer a i {
+            margin-right: 5px;
+            color: #00aaff;
+        }
 
-.footer a:hover {
-    color: #00e6ff; /* צבע בהיר יותר במעבר עכבר */
-    transform: scale(1.1); /* הגדלה קלה */
-}
+        .footer a:hover {
+            color: #00e6ff;
+            /* צבע בהיר יותר במעבר עכבר */
+            transform: scale(1.1);
+            /* הגדלה קלה */
+        }
 
-.footer div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
+        .footer div {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
 
 
 
@@ -515,7 +530,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            
+
         }
 
         .nav-title {
@@ -551,35 +566,39 @@
         }
 
         nav ul.menu li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    display: block;
-    text-transform: uppercase;
-    font-weight: bold;
-    position: relative;
-    transition: transform 0.3s ease, color 0.3s ease; /* אפקט מעבר עבור גודל הטקסט וצבע */
-}
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            text-transform: uppercase;
+            font-weight: bold;
+            position: relative;
+            transition: transform 0.3s ease, color 0.3s ease;
+            /* אפקט מעבר עבור גודל הטקסט וצבע */
+        }
 
-nav ul.menu li a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: #00aaff;
-    transition: width 0.3s ease;
-}
+        nav ul.menu li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: #00aaff;
+            transition: width 0.3s ease;
+        }
 
-nav ul.menu li a:hover {
-    transform: scale(1.1); /* הגדלת הטקסט במעבר עכבר */
-    color: #00aaff; /* שינוי צבע הטקסט */
-}
+        nav ul.menu li a:hover {
+            transform: scale(1.1);
+            /* הגדלת הטקסט במעבר עכבר */
+            color: #00aaff;
+            /* שינוי צבע הטקסט */
+        }
 
-nav ul.menu li a:hover::after {
-    width: 100%; /* התפשטות הקו התחתון */
-}
+        nav ul.menu li a:hover::after {
+            width: 100%;
+            /* התפשטות הקו התחתון */
+        }
 
         main {
             margin-top: 80px;
@@ -612,15 +631,17 @@ nav ul.menu li a:hover::after {
                 top: 60px;
                 left: 0;
                 width: 100%;
-                
+
                 padding: 0;
             }
 
-            nav ul.menu li{
+            nav ul.menu li {
                 margin: 0;
-                border: 1px solid #bee5eb4f; /* Subtle border to define the section */
+                border: 1px solid #bee5eb4f;
+                /* Subtle border to define the section */
                 padding: 3px;
             }
+
             nav ul.menu.active {
                 text-align: center;
                 display: flex;
@@ -638,58 +659,70 @@ nav ul.menu li a:hover::after {
                 position: relative;
                 /* כך ניתן למקם את הסרטון והתמונה ביחד */
             }
-            #sample-projects{
+
+            #sample-projects {
                 font-size: 30px;
-                margin-bottom:  50px;
+                margin-bottom: 50px;
                 padding-bottom: 10px;
                 word-spacing: 0.2cap;
             }
+
             #sample-projects.active::after {
-  width: calc(100% + 20px); /* קו רחב יותר מהטקסט */
-}
+                width: calc(100% + 20px);
+                /* קו רחב יותר מהטקסט */
+            }
 
 
         }
-        .description-p{
-    min-height: 75px;
-}
+
+        .description-p {
+            min-height: 75px;
+        }
+
         .technologies-used {
-    background-color: #d1ecf1; /* Light blue background for technologies */
-    color: #0c5460; /* Darker text color for contrast */
-    padding: 8px 12px; /* Increased padding for better spacing */
-    border-radius: 5px; /* Rounded corners */
-    font-weight: bold; /* Bold text */
-    text-align: center; /* Center align */
-    margin-top: 10px; /* Space above */
-    border: 1px solid #bee5eb; /* Subtle border to define the section */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-    font-size: 0.9rem; /* Slightly smaller font size */
-    min-height:70px;
-  
-}
+            background-color: #d1ecf1;
+            /* Light blue background for technologies */
+            color: #0c5460;
+            /* Darker text color for contrast */
+            padding: 8px 12px;
+            /* Increased padding for better spacing */
+            border-radius: 5px;
+            /* Rounded corners */
+            font-weight: bold;
+            /* Bold text */
+            text-align: center;
+            /* Center align */
+            margin-top: 10px;
+            /* Space above */
+            border: 1px solid #bee5eb;
+            /* Subtle border to define the section */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            /* Light shadow for depth */
+            font-size: 0.9rem;
+            /* Slightly smaller font size */
+            min-height: 70px;
 
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
+        }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #ffffff;
-}
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #43a4e1a3;
-}
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #ffffff;
+        }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #1183cac3;
-}
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #43a4e1a3;
+        }
 
-
-
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1183cac3;
+        }
     </style>
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
@@ -697,7 +730,7 @@ nav ul.menu li a:hover::after {
 
 <header>
     <nav>
-        <span  class="menu-icon"  onclick="toggleMenu()">&#9776;</span>
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
         <p class="nav-title">Yaniv Logi - Portfolio</p>
         <ul class="menu">
             <li><a href="#about-me">About Me</a></li>
@@ -714,81 +747,89 @@ nav ul.menu li a:hover::after {
 <body>
 
     <div class="container">
-        <section class="about-me" id="about-me">
-            <img src="./Images/Me.jpg" alt="Yaniv Logi" style="width: 100%; border-radius: 30px; margin-bottom: -50px; z-index: 1; position: relative; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);" />
-        
-            <div style="padding-top: 70px; padding-bottom: 20px; max-width: 600px; margin: auto;" >
-                <div style="display: flex; margin-bottom: 10px;">
-                    <span style="font-size: 18px; margin-right: 50px; align-items: left">👤</span>
-                    <span style="width: 30%; text-align: left; font-weight: bold;">Name:</span>
-                    <span style="width: 70%; text-align: left;">Yaniv Logi</span>
+        <section class="about-me-custom" id="about-me">
+            <img src="./Images/Me.jpg" alt="Yaniv Logi" class="profile-image-custom" />
+
+            <div class="info-container-custom">
+                <div class="info-item-custom">
+                    <span class="icon-custom">👤</span>
+                    <span class="label-custom">Name:</span>
+                    <span class="value-custom">Yaniv Logi</span>
                 </div>
-        
-                <div style="display: flex; margin-bottom: 10px;">
-                    <span style="font-size: 18px; margin-right: 50px; align-items: left;">🎂</span>
-                    <span style="width: 30%; text-align: left; font-weight: bold;">Age:</span>
-                    <span style="width: 70%; text-align: left;">26</span>
+
+                <div class="info-item-custom">
+                    <span class="icon-custom">🎂</span>
+                    <span class="label-custom">Age:</span>
+                    <span class="value-custom">26</span>
                 </div>
-        
-                <div style="display: flex; margin-bottom: 10px;">
-                    <span style="font-size: 18px; margin-right: 50px; align-items: left">📍</span>
-                    <span style="width: 30%; text-align: left;  font-weight: bold;">Location:</span>
-                    <span style="width: 70%; text-align: left;">Rishon LeZion, Israel</span>
+
+                <div class="info-item-custom">
+                    <span class="icon-custom">📍</span>
+                    <span class="label-custom">Location:</span>
+                    <span class="value-custom">Rishon LeZion, Israel</span>
                 </div>
-        
-                <div style="display: flex; margin-bottom: 10px;">
-                    <span style="font-size: 18px; margin-right: 50px; align-items: left">💼</span>
-                    <span style="width: 30%; text-align: left;  font-weight: bold;">Experience:</span>
-                    <span style="width: 70%; text-align: left;">3 Years in Software Development</span>
+
+                <div class="info-item-custom">
+                    <span class="icon-custom">💼</span>
+                    <span class="label-custom">Experience:</span>
+                    <span class="value-custom">3 Years in Software Development</span>
                 </div>
-        
-                <div style="display: flex; margin-bottom: 10px;">
-                    <span style="font-size: 18px; margin-right: 50px; align-items: left">📧</span>
-                    <span style="width: 30%; text-align: left;  font-weight: bold;">Mail:</span>
-                    <span style="width: 70%; text-align: left;">yanivlogi1@gmail.com</span>
+
+                <div class="info-item-custom">
+                    <span class="icon-custom">📧</span>
+                    <span class="label-custom">Mail:</span>
+                    <span class="value-custom">yanivlogi1@gmail.com</span>
                 </div>
             </div>
-        
-            <p style="line-height: 1.6;  max-width: 75ch; margin: 20px; padding-top: 20px;">
-                Hello, I'm Yaniv Logi, a Software Engineering Technician specializing in cybersecurity. I have a strong foundation in web development, backend systems, and cybersecurity practices. With hands-on experience in creating efficient software solutions, I have developed tools and systems ranging from inventory management to complex jewelry pricing calculators. My goal is to leverage my technical skills to provide innovative, secure, and scalable solutions for businesses in various industries.
+
+            <p class="description-custom">
+                <strong style="font-size: xx-large;">Hello</strong> , I'm Yaniv Logi, a Software Engineering Technician
+                specializing in cybersecurity. I have a strong
+                foundation in web development, backend systems, and cybersecurity practices. With hands-on experience in
+                creating efficient software solutions, I have developed tools and systems ranging from inventory
+                management to
+                complex jewelry pricing calculators. My goal is to leverage my technical skills to provide innovative,
+                secure,
+                and scalable solutions for businesses in various industries.
             </p>
         </section>
-        
-        
-        
+
+
         <section class="skills" id="skills">
             <h2>Technical Skills</h2>
             <ul style="padding-bottom: 20px;">
-                <li><strong style="font-size: x-large;">Software:<br> </strong> Unity (Game Development), Blender (3D Modeling) , Postman</li>
-                <li><strong style="font-size: x-large;">Security: <br></strong> Penetration Testing, Encryption, Cybersecurity Best Practices</li>
-                <li><strong style="font-size: x-large;">Languages: <br></strong>JavaScript, Python, Node.js, HTML, CSS, Java, SQL, C#</li>
-                <li><strong style="font-size: x-large;">Mobile Development: <br></strong> Android Studio (Infrared Control Applications)</li>
-                <li><strong style="font-size: x-large;">Frameworks & Libraries: <br></strong> Express.js, React, Mongoose, Handlebars</li>
+                <li><strong style="font-size: x-large;">Software:<br> </strong> Unity (Game Development), Blender (3D
+                    Modeling) , Postman</li>
+                <li><strong style="font-size: x-large;">Security: <br></strong> Penetration Testing, Encryption,
+                    Cybersecurity Best Practices</li>
+                <li><strong style="font-size: x-large;">Languages: <br></strong>JavaScript, Python, Node.js, HTML, CSS,
+                    Java, SQL, C#</li>
+                <li><strong style="font-size: x-large;">Mobile Development: <br></strong> Android Studio (Infrared
+                    Control Applications)</li>
+                <li><strong style="font-size: x-large;">Frameworks & Libraries: <br></strong> Express.js, React,
+                    Mongoose, Handlebars</li>
                 <li><strong style="font-size: x-large;">Tools: <br></strong> Git, Flipper Zero</li>
-                <li style="font-size: 22px; font-weight: bold; color: #00d0f9; margin-bottom: 10px; margin-top: 50px;">Special Projects:</li>
+                <li style="font-size: 22px; font-weight: bold; color: #00d0f9; margin-bottom: 10px; margin-top: 50px;">
+                    Special Projects:</li>
 
-                    <ul>
-                        <li>Remote Control App (Android Studio - Infrared)</li>
-                        <li>Python Aimbot (Educational Project)</li>
-                        <li>Game Development (Unity)</li>
-                        <li>Flipper Zero Gate Control</li>
-                        <a class="resume-download-btn " href="#sample-projects">See More</a>
+                <ul>
+                    <li>Remote Control App (Android Studio - Infrared)</li>
+                    <li>Python Aimbot (Educational Project)</li>
+                    <li>Game Development (Unity)</li>
+                    <li>Flipper Zero Gate Control</li>
+                    <a class="resume-download-btn " href="#sample-projects">See More</a>
 
-                    </ul>
+                </ul>
                 </li>
             </ul>
         </section>
-
-
-        <!-- -------------------------------------------------------------------- -->
-
-
 
         <!-- Experience Section -->
         <section class="experience-section" id="experience">
             <h2>Work Experience</h2>
             <div class="experience-item">
-                <h3><a href="https://eliana.diamonds/" style="color: white; font-weight: bold;">Eliana Diamonds</a> 🔗</h3>
+                <h3><a href="https://eliana.diamonds/" style="color: white; font-weight: bold;">Eliana Diamonds</a> 🔗
+                </h3>
                 <p><strong>Position:</strong> VP of Digital and Development</p>
                 <p><strong>Dates:</strong> 2023 - today</p>
                 <p>Managed and led the digital and development department, including the maintenance and enhancement of
@@ -812,17 +853,6 @@ nav ul.menu li a:hover::after {
             </div>
         </section>
 
-        <!-- Blog Section -->
-        <!-- <section class="blog-section">
-            <h2>Insights & Blog</h2>
-            <article class="blog-post">
-                <h3>Title of Blog Post</h3>
-                <p>Write a short description or introduction to your blog post. You can write about industry trends, technical challenges, or personal insights.</p>
-                <a href="link-to-full-post.html">Read More</a>
-            </article>
-        </section> -->
-
-        <!-- Resume Download Section -->
         <section class="resume-section" id="resume-section">
             <h2>Download My Resume</h2>
             <p>If you’d like a detailed overview of my experience and skills, download my resume below.</p>
@@ -832,14 +862,15 @@ nav ul.menu li a:hover::after {
         <!-- ------------------------------------------------------------------------         -->
         <div class="title-container">
             <p id="sample-projects">My Projects</p>
-          </div>
+        </div>
         <div class="gallery" id="gallery">
-            
+
             <div class="gallery-item">
                 <a href="https://github.com/yanivlogi/AimBot">
                     <div style="width: auto; height: 255px; object-fit: fill;">
-                        <iframe src="https://player.vimeo.com/video/1019110366?autoplay=1&background=1&loop=1" width="350"
-                            height="250" frameborder="1" allow="autoplay; fullscreen; title=" ShtokFlix></iframe>
+                        <iframe src="https://player.vimeo.com/video/1019110366?autoplay=1&background=1&loop=1"
+                            width="350" height="250" frameborder="1" allow="autoplay; fullscreen; title="
+                            ShtokFlix></iframe>
                     </div>
                     <script src="https://player.vimeo.com/api/player.js"></script>
                     <h3>ShtokFlix</h3>
@@ -858,7 +889,8 @@ nav ul.menu li a:hover::after {
                     <h3>DirRenamer</h3>
                 </a>
                 <div class="description">
-                    <p class="description-p">Python script for renaming directories with a prefix and numbering. Converted to EXE for easy
+                    <p class="description-p">Python script for renaming directories with a prefix and numbering.
+                        Converted to EXE for easy
                         use.</p>
                     <p class="technologies-used">Technologies Used: Python, OS Module, PyInstaller</p>
                 </div>
@@ -872,9 +904,11 @@ nav ul.menu li a:hover::after {
                     <h3>Inventory Management System</h3>
                 </a>
                 <div class="description">
-                    <p class="description-p">An inventory management system with barcode scanning for efficient stock tracking and real-time
+                    <p class="description-p">An inventory management system with barcode scanning for efficient stock
+                        tracking and real-time
                         monitoring.</p>
-                    <p class="technologies-used">Technologies Used: JavaScript, Node.js, Express, MongoDB, Handlebars, CSS, Bootstrap</p>
+                    <p class="technologies-used">Technologies Used: JavaScript, Node.js, Express, MongoDB, Handlebars,
+                        CSS, Bootstrap</p>
                 </div>
                 <div id="dynamic-image-dots" class="dots">
                     <span class="dot active" onmouseover="showImage('dynamic-image', StorageManagerImages, 0)"></span>
@@ -892,7 +926,8 @@ nav ul.menu li a:hover::after {
                     <h3>Conversion Calculator for Carats to Millimeters</h3>
                 </a>
                 <div class="description">
-                    <p class="description-p">Calculates carat weight to millimeters for diamond shapes. Developed for a jewelry store.</p>
+                    <p class="description-p">Calculates carat weight to millimeters for diamond shapes. Developed for a
+                        jewelry store.</p>
                     <p class="technologies-used">Technologies Used: JavaScript, HTML, CSS</p>
 
                 </div>
@@ -913,8 +948,8 @@ nav ul.menu li a:hover::after {
                 </a>
                 <div class="description">
                     <p class="description-p">Web app connecting stray animals with adopters securely.</p>
-                    <p class="technologies-used">Technologies Used: JavaScript, React.js, Node.js, MongoDB, CSS, Bootstrap.</p>
-              
+                    <p class="technologies-used">Technologies Used: JavaScript, React.js, Node.js, MongoDB, CSS,
+                        Bootstrap.</p>
                 </div>
                 <div id="dynamic-image-pethouse-dots" class="dots">
                     <span class="dot active"
@@ -937,7 +972,8 @@ nav ul.menu li a:hover::after {
                     <h3>Jewelry Pricing Calculator</h3>
                 </a>
                 <div class="description">
-                    <p class="description-p">Calculates jewelry prices based on gold weight and diamond characteristics.</p>
+                    <p class="description-p">Calculates jewelry prices based on gold weight and diamond characteristics.
+                    </p>
                     <p class="technologies-used">Technologies Used: JavaScript, HTML, CSS</p>
 
                 </div>
@@ -953,7 +989,8 @@ nav ul.menu li a:hover::after {
                     <h3>AimBot</h3>
                 </a>
                 <div class="description">
-                    <p class="description-p">Automation tool that enhances productivity by detecting and clicking specific colors on screen.
+                    <p class="description-p">Automation tool that enhances productivity by detecting and clicking
+                        specific colors on screen.
                     </p>
                     <p class="technologies-used">Technologies Used: Python, Tkinter, PyAutoGUI, Win32 API</p>
 
@@ -962,25 +999,26 @@ nav ul.menu li a:hover::after {
             <div class="gallery-item">
                 <a href="https://github.com/yanivlogi/Survival">
                     <div style="padding:45% 0 0 0;position:relative;">
-                        <iframe src="https://player.vimeo.com/video/1023583210?autoplay=1&background=1&loop=1" 
-                            frameborder="0" 
-                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-                            style="position:absolute;top:0;left:0;width:100%;height:100%;" 
-                            title="INSECT ATTACK">
+                        <iframe src="https://player.vimeo.com/video/1023583210?autoplay=1&background=1&loop=1"
+                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;" title="INSECT ATTACK">
                         </iframe>
-                    </div><script src="https://player.vimeo.com/api/player.js"></script>
+                    </div>
+                    <script src="https://player.vimeo.com/api/player.js"></script>
                     <h3>INSECT ATTACK</h3>
                 </a>
                 <div class="description">
                     <p class="description-p">
-                        A 2D mobile game developed in Unity, focusing on survival mechanics. Players defeat monsters to collect items that enhance abilities like increased HP, faster shooting speed, and quicker movement.
+                        A 2D mobile game developed in Unity, focusing on survival mechanics. Players defeat monsters to
+                        collect items that enhance abilities like increased HP, faster shooting speed, and quicker
+                        movement.
                     </p>
                     <p class="technologies-used">
                         Technologies Used: Unity, C#, Mobile UI Design, 2D Graphics
                     </p>
                 </div>
             </div>
-            
+
 
 
         </div>
@@ -1001,7 +1039,7 @@ nav ul.menu li a:hover::after {
         <section class="contact-section" id="contact">
             <h2>Contact Me</h2>
             <p>Feel free to reach out via email or use the form below:</p>
-            <form action="mailto:yanivlogi1@gmail.com" method="post" enctype="text/plain">
+            <form id="dynamic-input" action="mailto:yanivlogi1@gmail.com" method="post" enctype="text/plain">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
 
@@ -1036,49 +1074,59 @@ nav ul.menu li a:hover::after {
             </a>
         </div>
     </footer>
-    
+
 
 
     <script>
 
-function toggleMenu() {
-    const menu = document.querySelector('nav ul.menu');
-    menu.classList.toggle('active');
-}
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul.menu');
+            menu.classList.toggle('active');
+        }
 
-// סגירת התפריט אחרי לחיצה על אחד הקישורים וגלילה חלקה
-document.querySelectorAll('nav ul.menu li a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        const offset = 115; // גובה התפריט הקבוע שלך
 
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition - offset;
-
-        window.scrollBy({
-            top: offsetPosition,
-            behavior: 'smooth'
+        document.getElementById("dynamic-input").addEventListener("input", function (event) {
+            const input = event.target;
+            // בדיקה אם התו הראשון הוא עברית
+            const isHebrew = /[\u0590-\u05FF]/.test(input.value.charAt(0));
+            // הגדרת כיוון לפי השפה
+            input.style.direction = isHebrew ? "rtl" : "ltr";
         });
 
-        // סגירת התפריט
-        const menu = document.querySelector('nav ul.menu');
-        menu.classList.remove('active');
-    });
-});
 
-document.addEventListener("scroll", function() {
-  const element = document.getElementById("sample-projects");
-  const position = element.getBoundingClientRect();
+        // סגירת התפריט אחרי לחיצה על אחד הקישורים וגלילה חלקה
+        document.querySelectorAll('nav ul.menu li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const offset = 115; // גובה התפריט הקבוע שלך
 
-  // בדיקה אם האלמנט נמצא בתצוגה
-  if (position.top >= 0 && position.bottom <= window.innerHeight) {
-    element.classList.add("active");
-  } else {
-    element.classList.remove("active");
-  }
-});
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition - offset;
+
+                window.scrollBy({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+
+                // סגירת התפריט
+                const menu = document.querySelector('nav ul.menu');
+                menu.classList.remove('active');
+            });
+        });
+
+        document.addEventListener("scroll", function () {
+            const element = document.getElementById("sample-projects");
+            const position = element.getBoundingClientRect();
+
+            // בדיקה אם האלמנט נמצא בתצוגה
+            if (position.top >= 0 && position.bottom <= window.innerHeight) {
+                element.classList.add("active");
+            } else {
+                element.classList.remove("active");
+            }
+        });
 
         const PetHouseImages = [
             'https://github.com/yanivlogi/portfolio/blob/master/Images/PetHouse.png?raw=true',
