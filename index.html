@@ -10,6 +10,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');
 
+        html{
+            scroll-behavior: smooth;
+        }
+
         /* ------------------------------------------------------------ */
         .contact-section,
         .testimonials-section,
@@ -36,6 +40,9 @@
 
         .contact-section input,
         .contact-section textarea {
+            caret-shape: underscore;
+            font-size: x-large;
+            color: #ffffff;
             padding-bottom: 15px;
             padding-top: 15px;
             border: 1px solid #ccc;
@@ -43,10 +50,16 @@
             width: 100%;
             max-width: 400px;
             margin: 0 auto;
+            background-color: #0015166b;
+            box-shadow: 0px 3px 7px rgba(0, 234, 255, 0.638),
+     2px 0px 4px rgba(0, 234, 255, 0.638),
+     -2px 0px 4px rgba(0, 234, 255, 0.638),
+     0px -2px 4px rgba(0, 234, 255, 0.638),
+     0px 0px 20px rgb(255, 255, 255); /* צל כחול זוהר */
         }
 
         .contact-section button {
-            margin: 0 auto; /* מרכז את הכפתור אופקית */
+            margin: 20px auto; /* מרכז את הכפתור אופקית */
             cursor: pointer;
         }
 
@@ -122,7 +135,7 @@
 
 
         .about-me {
-            background: linear-gradient(135deg, #0096877a 0%, #1d4fa677 100%);
+            background: linear-gradient(10deg, #09c1e67a 20%, #1d4fa677 80%);
             /* גוונים של טורקיז וירוק */
             color: white;
             padding: 20px 20px;
@@ -212,7 +225,7 @@
         }
 
         .skills {
-            background: linear-gradient(135deg, #0096877a 0%, #1d4fa677 100%);
+            background: linear-gradient(10deg, #09c1e67a 20%, #1d4fa677 80%);
             /* תן רקע כהה לכישורים */
             color: white;
             text-align: center;
@@ -280,6 +293,7 @@
             font-size: 36px;
         }
 
+     
         .gallery {
             display: flex;
             flex-wrap: wrap;
@@ -291,10 +305,59 @@
             
 
         }
+        .title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* ממלא את הגובה הפנוי */
+  text-align: center;
+ 
+}
 
-        #sample-projects{
-            scroll-margin-top: 110px;
-        }
+#sample-projects {
+   
+    scroll-margin-top: 110px;
+  color: #000000be;
+  font-size: 8ch;
+  font-weight: 700;
+  text-shadow:
+     0px 3px 7px rgba(0, 234, 255, 0.638),
+     3px 0px 7px rgba(0, 234, 255, 0.638),
+     -3px 0px 7px rgba(0, 234, 255, 0.638),
+     0px -3px 7px rgba(0, 234, 255, 0.638),
+     0px 0px 20px rgb(255, 255, 255);
+  letter-spacing: 0.4rem;
+  word-spacing: 2rem;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#sample-projects::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px; /* עובי הקו */
+  background-color: #000000be;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 20px; /* מרחיב את הקו 20 פיקסלים מכל צד */
+  border-radius: 1.5px; /* חצי מהגובה כדי ליצור קצוות עגולים */
+  transition: width 2s ease;
+  box-shadow: 0px 3px 7px rgba(0, 234, 255, 0.638),
+     2px 0px 4px rgba(0, 234, 255, 0.638),
+     -2px 0px 4px rgba(0, 234, 255, 0.638),
+     0px -2px 4px rgba(0, 234, 255, 0.638),
+     0px 0px 20px rgb(255, 255, 255); /* צל כחול זוהר */
+}
+
+#sample-projects.active::after {
+  width: calc(100% + 110px); /* קו רחב יותר מהטקסט */
+}
+
+
 
         .gallery .gallery-item {
             width: 350px;
@@ -392,7 +455,7 @@
             background-color: #333;
         }
         .footer {
-    background-color: #000000; /* צבע כהה תואם להדר */
+    background-color: #001516a1; /* צבע כהה תואם להדר */
     color: white;
     text-align: center;
     padding: 20px 0;
@@ -441,7 +504,7 @@
 
         /* עיצוב ראשי */
         nav {
-            background-color: #000000;
+            background-color: #001516;
             padding: 15px;
             position: fixed;
             top: 0;
@@ -553,9 +616,15 @@ nav ul.menu li a:hover::after {
                 padding: 0;
             }
 
+            nav ul.menu li{
+                margin: 0;
+                border: 1px solid #bee5eb4f; /* Subtle border to define the section */
+                padding: 3px;
+            }
             nav ul.menu.active {
+                text-align: center;
                 display: flex;
-                background-color: #333333f2;
+                background-color: #001516e8;
             }
 
             nav .menu-icon {
@@ -569,8 +638,15 @@ nav ul.menu li a:hover::after {
                 position: relative;
                 /* כך ניתן למקם את הסרטון והתמונה ביחד */
             }
-
-
+            #sample-projects{
+                font-size: 30px;
+                margin-bottom:  50px;
+                padding-bottom: 10px;
+                word-spacing: 0.2cap;
+            }
+            #sample-projects.active::after {
+  width: calc(100% + 20px); /* קו רחב יותר מהטקסט */
+}
 
 
         }
@@ -611,6 +687,9 @@ nav ul.menu li a:hover::after {
 ::-webkit-scrollbar-thumb:hover {
     background: #1183cac3;
 }
+
+
+
     </style>
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
@@ -636,7 +715,7 @@ nav ul.menu li a:hover::after {
 
     <div class="container">
         <section class="about-me" id="about-me">
-            <img src="/Images/Me.jpg" alt="Yaniv Logi" style="width: 100%; border-radius: 30px; margin-bottom: -50px; z-index: 1; position: relative; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);" />
+            <img src="./Images/Me.jpg" alt="Yaniv Logi" style="width: 100%; border-radius: 30px; margin-bottom: -50px; z-index: 1; position: relative; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);" />
         
             <div style="padding-top: 70px; padding-bottom: 20px; max-width: 600px; margin: auto;" >
                 <div style="display: flex; margin-bottom: 10px;">
@@ -751,7 +830,9 @@ nav ul.menu li a:hover::after {
             <a href="./Files/Yaniv_Logi-HE.pdf" download class="resume-download-btn">הורדה בעברית (PDF)</a>
         </section>
         <!-- ------------------------------------------------------------------------         -->
-        <h1  id="sample-projects" style="color: #ffffff; background-color: #66ccff8e;">Sample Projects</h1>
+        <div class="title-container">
+            <p id="sample-projects">My Projects</p>
+          </div>
         <div class="gallery" id="gallery">
             
             <div class="gallery-item">
@@ -971,7 +1052,7 @@ document.querySelectorAll('nav ul.menu li a').forEach(anchor => {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
-        const offset = 90; // גובה התפריט הקבוע שלך
+        const offset = 115; // גובה התפריט הקבוע שלך
 
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition - offset;
@@ -985,6 +1066,18 @@ document.querySelectorAll('nav ul.menu li a').forEach(anchor => {
         const menu = document.querySelector('nav ul.menu');
         menu.classList.remove('active');
     });
+});
+
+document.addEventListener("scroll", function() {
+  const element = document.getElementById("sample-projects");
+  const position = element.getBoundingClientRect();
+
+  // בדיקה אם האלמנט נמצא בתצוגה
+  if (position.top >= 0 && position.bottom <= window.innerHeight) {
+    element.classList.add("active");
+  } else {
+    element.classList.remove("active");
+  }
 });
 
         const PetHouseImages = [
