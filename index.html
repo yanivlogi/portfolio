@@ -100,6 +100,22 @@
             box-shadow: 0 1px 15px rgba(0, 234, 255, 0);
         }
 
+        .resume-download-btn-small {
+            display: inline-block;
+            padding: 5px 10px;
+            text-decoration: none;
+            color: #43a4e1;
+            border-radius: 30px;
+            font-size: 0.85em;
+            margin-bottom: 20px;
+        }
+        .resume-download-btn-small:hover {
+            background-color: #050b1541;
+            color: white;
+            
+        }
+
+
         .blog-post {
             margin: 20px 0;
             text-align: left;
@@ -877,9 +893,18 @@
         <section class="resume-section" id="resume-section">
             <h2>Download My Resume</h2>
             <p>If you’d like a detailed overview of my experience and skills, download my resume below.</p>
-            <a href="./Files/Yaniv_Logi-ENG.pdf" download class="resume-download-btn">Download in English (PDF)</a>
-            <a href="./Files/Yaniv_Logi-HEB.pdf" download class="resume-download-btn">הורדה בעברית (PDF)</a>
+            
+            <div class="resume-download-group">
+                <a href="./Files/Yaniv_Logi-ENG.pdf" download class="resume-download-btn">Download in English (PDF)</a><br>
+                <a href="./Files/Yaniv_Logi-ENG.docx" download class="resume-download-btn-small">Download in English (Docx)</a>
+            </div>
+            
+            <div class="resume-download-group">
+                <a href="./Files/Yaniv_Logi-HEB.pdf" download class="resume-download-btn">הורדה בעברית (PDF)</a><br>
+                <a href="./Files/Yaniv_Logi-HEB.docx" download class="resume-download-btn-small">הורדה בעברית (Docx)</a>
+            </div>
         </section>
+        
         <!-- ------------------------------------------------------------------------         -->
         <div class="title-container">
             <p id="sample-projects">My Projects</p>
